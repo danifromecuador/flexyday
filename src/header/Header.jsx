@@ -12,7 +12,6 @@ export const Header = () => {
       setBlockName("")
       // setBlockDuration("")
     }
-    // console.log(e.key);
   }
 
   useEffect(() => {
@@ -24,17 +23,17 @@ export const Header = () => {
       <div className="create">
         <input
           type="text"
-          placeholder='type a new block name and press Enter key'
+          placeholder='type a new block name and press Enter'
           value={blockName}
           onChange={(e) => setBlockName(e.target.value)}
           onKeyDown={(e) => handleKeyDown(e)}
         />
+        <button onClick={()=>setBlocks([])}>Delete All Blocks</button>
       </div>
-      {/* <div className="hours">1 2 3</div> */}
       <div className="blocks">
-        {
-          blocks.map(block => (<div className={`block ${block.duration}`}>{block.name}</div>))
-        }
+        {blocks.map(block => (
+          <div className={`block ${block.duration}`}>{block.name}</div>
+        ))}
       </div>
     </div>
   )

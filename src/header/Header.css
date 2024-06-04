@@ -1,3 +1,7 @@
+.Header .create input {
+  width: 250px;
+}
+
 .Header .blocks {
   display: flex;
 }
@@ -5,9 +9,11 @@
 .Header .block {
   border: 1px solid red;
   height: 30px;
+  width: 30px;
   padding: 0 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  white-space: nowrap;
+  overflow: hidden;
 }
