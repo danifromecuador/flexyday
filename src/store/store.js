@@ -19,5 +19,17 @@ export const Store = create(devtools((set) => ({
     if (miniBlocksCopy.length > 1) miniBlocksCopy.pop()
     blocksCopy[i].miniBlocks = miniBlocksCopy
     return ({ blocks: blocksCopy })
+  }),
+  days: [],
+  createDays: () => set((state) => {
+    let blocksCopy = [...state.blocks]
+    const daysNames = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    const daysArray = []
+    for (let i = 0; i < daysNames.length; i++) {
+      daysArray.push({ name: daysNames[i], blocks: blocksCopy })
+    }
+    return ({
+      days: daysArray
+    })
   })
 })))
