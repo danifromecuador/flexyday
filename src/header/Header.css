@@ -7,6 +7,12 @@
   column-gap: 5px;
 }
 
+.Header .blocks.just-header {
+  width: fit-content;
+  border: 1px solid gray;
+  margin: 10px 0k;
+}
+
 .Header .blocks .block-and-name .name {
   text-align: center;
 }
