@@ -16,13 +16,6 @@ export const Header = () => {
     }
   }
 
-  const addMiniBlock = (indexBlock) => {
-    console.log(indexBlock);
-    store.addMiniBlock(indexBlock)
-  }
-
-
-
   return (
     <div className='Header'>
       <input
@@ -36,12 +29,12 @@ export const Header = () => {
       <div className="blocks">
         {store.blocks.map((block, indexBlock) => (
           <div className='block-and-name'>
-            <div className='block' key={indexBlock} onClick={() => addMiniBlock(indexBlock)}>
+            <div className="name">{block.name}</div>
+            <div className='block' key={indexBlock} onClick={() => store.addMiniBlock(indexBlock)}>
               {block.miniblocks.map((miniblock) => (
-                <div className='mini_block'>x</div>
+                <div className='mini-block'></div>
               ))}
             </div>
-            <div className="name">{block.name}</div>
           </div>
         ))}
       </div>
