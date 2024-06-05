@@ -7,15 +7,15 @@
 }
 
 .Header .block {
-  border: 1px solid red;
+  border: 2px solid red;
   height: 30px;
   width: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
   white-space: nowrap;
   overflow: hidden;
   cursor: pointer;
+  z-index: 1;
 }
 
 .Header .block.b {
@@ -116,4 +116,15 @@
 
 .Header .block.z {
   width: 520px;
+}
+
+.Header .blocks .block .mini-block {
+  border-right: 1px solid blue;
+  width: 20px;
+  height: 30px;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
 }
