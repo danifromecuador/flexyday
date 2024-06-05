@@ -1,0 +1,41 @@
+.Header input {
+  width: 250px;
+}
+
+.Header .blocks {
+  display: flex;
+  column-gap: 5px;
+}
+
+.Header .blocks .block-and-name .name {
+  text-align: center;
+}
+
+.Header .blocks .block-and-name .block {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Header .blocks .block-and-name .block .mini-block {
+  border-right: 1px solid black;
+  width: 20px;
+  height: 30px;
+}
+
+.Header .blocks .block-and-name .block .mini-block:nth-child(8n+1),
+.Header .blocks .block-and-name .block .mini-block:nth-child(8n+2),
+.Header .blocks .block-and-name .block .mini-block:nth-child(8n+3),
+.Header .blocks .block-and-name .block .mini-block:nth-child(8n+4) {
+  background-color: #a9e4cf;
+}
+
+.Header .blocks .block-and-name .block .mini-block:nth-child(8n+5),
+.Header .blocks .block-and-name .block .mini-block:nth-child(8n+6),
+.Header .blocks .block-and-name .block .mini-block:nth-child(8n+7),
+.Header .blocks .block-and-name .block .mini-block:nth-child(8n+8) {
+  background-color: #deddc4;
+}
