@@ -10,19 +10,19 @@ export const Day = () => {
     <div className='Header Day'>
       {
         store.blocks.length >= 1 &&
-        store.days.map((day) => (
-          <div className='day'>
+        store.days.map((day, indexDay) => (
+          <div className='day' key={indexDay}>
             <div className='blocks'>
               {day.blocks.map((block, indexBlock) => (
                 <div className='block-and-name' key={indexBlock}>
-                  <div className='block' onClick={() => addMiniBlock(indexBlock)}>
+                  <div className='block'>
                     {block.miniBlocks.map((miniBlock, indexMiniBlock) => (
-                      <div
+                      <input
+                        type="checkbox"
                         className='mini-block'
                         key={indexMiniBlock}
-                        onContextMenu={(event) => deleteMiniBlock(event, indexBlock)}
-                      >
-                      </div>
+                        onChange={() => console.log([indexDay, indexBlock, indexMiniBlock])}
+                      />
                     ))}
                   </div>
                 </div>

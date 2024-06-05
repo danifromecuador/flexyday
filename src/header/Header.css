@@ -9,8 +9,10 @@
 
 .Header .blocks.just-header {
   width: fit-content;
-  border: 1px solid gray;
-  margin: 10px 0k;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  margin: 10px 0;
+  padding: 5px 0 10px 0;
 }
 
 .Header .blocks .block-and-name .name {
@@ -18,7 +20,6 @@
 }
 
 .Header .blocks .block-and-name .block {
-  padding: 5px;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -27,7 +28,7 @@
 }
 
 .Header .blocks .block-and-name .block .mini-block {
-  border-right: 1px solid black;
+  border-right: 1px solid gray;
   width: 20px;
   height: 30px;
 }
