@@ -16,7 +16,7 @@ export const Store = create(devtools((set) => ({
   deleteMiniBlock: (i) => set((state) => {
     let blocksCopy = [...state.blocks]
     let miniBlocksCopy = blocksCopy[i].miniBlocks
-    miniBlocksCopy.pop()
+    if (miniBlocksCopy.length > 1) miniBlocksCopy.pop()
     blocksCopy[i].miniBlocks = miniBlocksCopy
     return ({ blocks: blocksCopy })
   })
