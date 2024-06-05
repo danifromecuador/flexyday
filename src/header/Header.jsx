@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Header.css'
 
-export const Header = () => {
+export const Header = ({ blocksToParent }) => {
   const [blockName, setBlockName] = useState("")
   const [blocks, setBlocks] = useState(JSON.parse(localStorage.getItem("blocks")) || [])
   const alphabet = [..."abcdefghijklmnopqrstuvwxyz"]
@@ -32,7 +32,7 @@ export const Header = () => {
 
   useEffect(() => {
     localStorage.setItem("blocks", JSON.stringify(blocks))
-    console.log(blocks[0])
+    blocksToParent(blocks)
   }, [blocks])
 
   return (
