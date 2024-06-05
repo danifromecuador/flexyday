@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Store } from '../store/store.js'
 import './Header.css'
 
@@ -23,6 +23,8 @@ export const Header = () => {
     store.deleteMiniBlock(i)
   }
 
+  useEffect(() => localStorage.setItem("store", JSON.stringify(store)), [store])
+
   return (
     <div className='Header'>
       <input
@@ -39,7 +41,12 @@ export const Header = () => {
             <div className="name">{block.name}</div>
             <div className='block' onClick={() => addMiniBlock(indexBlock)}>
               {block.miniBlocks.map((miniBlock, indexMiniBlock) => (
-                <div className='mini-block' key={indexMiniBlock} onContextMenu={(event) => deleteMiniBlock(event, indexBlock)} ></div>
+                <div
+                  className='mini-block'
+                  key={indexMiniBlock}
+                  onContextMenu={(event) => deleteMiniBlock(event, indexBlock)}
+                >
+                </div>
               ))}
             </div>
           </div>

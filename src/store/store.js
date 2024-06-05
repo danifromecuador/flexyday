@@ -3,7 +3,7 @@ import { devtools } from "zustand/middleware"
 
 export const Store = create(devtools((set) => ({
   bears: 23,
-  blocks: [],
+  blocks: JSON.parse(localStorage.getItem("store")).blocks || [],
   addBlock: (name) => set((state) => ({
     blocks: [...state.blocks, { name: name, miniBlocks: [{ completed: false }] }]
   })),
