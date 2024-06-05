@@ -13,7 +13,13 @@ export const App = () => {
   return (
     <div className="App">
       <Header blocksToParent={getBlocksFromChild} />
-      <Day blocks={blocksFromChild} />
+      <Day blocks={blocksFromChild} label={"monday"} />
+      <Day blocks={blocksFromChild} label={"tuesday"} />
+      <Day blocks={blocksFromChild} label={"wednesday"} />
+      <Day blocks={blocksFromChild} label={"thursday"} />
+      <Day blocks={blocksFromChild} label={"friday"} />
+      <Day blocks={blocksFromChild} label={"saturday"} />
+      <Day blocks={blocksFromChild} label={"sunday"} />
     </div>
   )
 }

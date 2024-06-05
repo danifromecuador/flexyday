@@ -4,6 +4,7 @@
 
 .Header .blocks {
   display: flex;
+  column-gap: 5px;
 }
 
 .Header .block {

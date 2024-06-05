@@ -1,0 +1,12 @@
+.Header.Day {
+  display: flex;
+  column-gap: 20px;
+}
+
+.Header.Day .block{
+  border: none;
+}
+
+.Header.Day .mini-block {
+  cursor: pointer;
+}
