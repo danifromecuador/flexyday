@@ -1,3 +1,5 @@
-.Day {
-  color: red;
+.Header.Day .day {
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
 }
