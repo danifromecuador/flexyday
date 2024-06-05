@@ -4,7 +4,7 @@ import './Header.css'
 export const Header = () => {
   const [blockName, setBlockName] = useState("")
   // const [blockDuration, setBlockDuration] = useState("")
-  const [blocks, setBlocks] = useState([])
+  const [blocks, setBlocks] = useState(JSON.parse(localStorage.getItem("blocks")) || [])
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -15,7 +15,7 @@ export const Header = () => {
   }
 
   useEffect(() => {
-    console.log(blocks);
+    localStorage.setItem("blocks", JSON.stringify(blocks))
   }, [blocks])
 
   return (
