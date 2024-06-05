@@ -21,7 +21,7 @@ export const Day = () => {
                         type="checkbox"
                         className='mini-block'
                         key={indexMiniBlock}
-                        onChange={() => console.log([indexDay, indexBlock, indexMiniBlock])}
+                        onChange={() => store.markMiniBlock(indexDay, indexBlock, indexMiniBlock)}
                       />
                     ))}
                   </div>

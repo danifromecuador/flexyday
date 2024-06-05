@@ -28,8 +28,11 @@ export const Store = create(devtools((set) => ({
     for (let i = 0; i < daysNames.length; i++) {
       daysArray.push({ name: daysNames[i], blocks: blocksCopy })
     }
-    return ({
-      days: daysArray
-    })
+    return ({ days: daysArray })
+  }),
+  markMiniBlock: (indexDay, indexBlock, indexMiniBlock) => set((state) => {
+    let daysCopy = [...state.days]
+    daysCopy[indexDay].blocks[indexBlock].miniBlocks[indexMiniBlock].completed = true
+    return ({ days: daysCopy })
   })
 })))
