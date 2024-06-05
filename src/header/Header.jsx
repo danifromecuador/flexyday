@@ -7,7 +7,7 @@ export const Header = () => {
   const [input, setInput] = useState("")
   const [placeHolder, setPlaceHolder] = useState("Type a new block and press Enter")
 
-  const handleEnter = (e) => {
+  const addBlock = (e) => {
     if (e.key === "Enter" && !input) setPlaceHolder("Type something")
     if (e.key === "Enter" && input) {
       store.addBlock(input)
@@ -16,6 +16,13 @@ export const Header = () => {
     }
   }
 
+  const addMiniBlock = (indexBlock) => {
+    console.log(indexBlock);
+    store.addMiniBlock(indexBlock)
+  }
+
+
+
   return (
     <div className='Header'>
       <input
@@ -23,12 +30,19 @@ export const Header = () => {
         placeholder={placeHolder}
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        onKeyDown={(e) => handleEnter(e)}
+        onKeyDown={(e) => addBlock(e)}
       />
       <button onClick={() => store.deleteAllBlocks()}>Delete All Blocks</button>
       <div className="blocks">
-        {store.blocks.map((block, index) => (
-          <div className='block' key={index}>{index}</div>
+        {store.blocks.map((block, indexBlock) => (
+          <div className='block-and-name'>
+            <div className='block' key={indexBlock} onClick={() => addMiniBlock(indexBlock)}>
+              {block.miniblocks.map((miniblock) => (
+                <div className='mini_block'>x</div>
+              ))}
+            </div>
+            <div className="name">{block.name}</div>
+          </div>
         ))}
       </div>
     </div>
