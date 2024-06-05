@@ -9,11 +9,111 @@
 .Header .block {
   border: 1px solid red;
   height: 30px;
-  width: 30px;
-  padding: 0 5px;
+  width: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.Header .block.b {
+  width: 40px;
+}
+
+.Header .block.c {
+  width: 60px;
+}
+
+.Header .block.d {
+  width: 80px;
+}
+
+.Header .block.e {
+  width: 100px;
+}
+
+.Header .block.f {
+  width: 120px;
+}
+
+.Header .block.g {
+  width: 140px;
+}
+
+.Header .block.h {
+  width: 160px;
+}
+
+.Header .block.i {
+  width: 180px;
+}
+
+.Header .block.j {
+  width: 200px;
+}
+
+.Header .block.k {
+  width: 220px;
+}
+
+.Header .block.l {
+  width: 240px;
+}
+
+.Header .block.m {
+  width: 260px;
+}
+
+.Header .block.n {
+  width: 280px;
+}
+
+.Header .block.o {
+  width: 300px;
+}
+
+.Header .block.p {
+  width: 320px;
+}
+
+.Header .block.q {
+  width: 340px;
+}
+
+.Header .block.r {
+  width: 360px;
+}
+
+.Header .block.s {
+  width: 380px;
+}
+
+.Header .block.t {
+  width: 400px;
+}
+
+.Header .block.u {
+  width: 420px;
+}
+
+.Header .block.v {
+  width: 440px;
+}
+
+.Header .block.w {
+  width: 460px;
+}
+
+.Header .block.x {
+  width: 480px;
+}
+
+.Header .block.y {
+  width: 500px;
+}
+
+.Header .block.z {
+  width: 520px;
 }

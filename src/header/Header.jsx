@@ -5,26 +5,24 @@ export const Header = () => {
   const [blockName, setBlockName] = useState("")
   const [blockDurationClass, setBlockDurationClass] = useState("a")
   const [blocks, setBlocks] = useState(JSON.parse(localStorage.getItem("blocks")) || [])
-  const alphabet = [..."abcdefghijk"]
+  const alphabet = [..."abcdefghijklmnopqrstuvwxyz"]
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      setBlocks([...blocks, { name: blockName, duration: 1, durationClass:alphabet[1] }])
+      setBlocks([...blocks, { name: blockName, duration: 1, durationClass:alphabet[0] }])
       setBlockName("")
     }
   }
 
   const increaseBlockDuration = (i) => {
-    const newBlocks = [...blocks];
-    newBlocks[i] = { ...newBlocks[i], duration: newBlocks[i].duration + 1, durationClass: alphabet[newBlocks[i].duration] };
-    setBlocks(newBlocks);
-  };
+    const newBlocks = [...blocks]
+    newBlocks[i] = { ...newBlocks[i], duration: newBlocks[i].duration + 1, durationClass: alphabet[newBlocks[i].duration] }
+    setBlocks(newBlocks)
+  }
 
   useEffect(() => {
     localStorage.setItem("blocks", JSON.stringify(blocks))
-
-    console.log(blocks);
-
+    console.log(blocks[0])
   }, [blocks])
 
   return (
