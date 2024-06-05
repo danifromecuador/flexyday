@@ -16,6 +16,13 @@ export const Header = () => {
     }
   }
 
+  const addMiniBlock = (i) => store.addMiniBlock(i)
+
+  const deleteMiniBlock = (event, i) => {
+    event.preventDefault()
+    store.deleteMiniBlock(i)
+  }
+
   return (
     <div className='Header'>
       <input
@@ -28,11 +35,11 @@ export const Header = () => {
       <button onClick={() => store.deleteAllBlocks()}>Delete All Blocks</button>
       <div className="blocks">
         {store.blocks.map((block, indexBlock) => (
-          <div className='block-and-name'>
+          <div className='block-and-name' key={indexBlock}>
             <div className="name">{block.name}</div>
-            <div className='block' key={indexBlock} onClick={() => store.addMiniBlock(indexBlock)}>
-              {block.miniblocks.map((miniblock) => (
-                <div className='mini-block'></div>
+            <div className='block' onClick={() => addMiniBlock(indexBlock)}>
+              {block.miniBlocks.map((miniBlock, indexMiniBlock) => (
+                <div className='mini-block' key={indexMiniBlock} onContextMenu={(event) => deleteMiniBlock(event, indexBlock)} ></div>
               ))}
             </div>
           </div>
