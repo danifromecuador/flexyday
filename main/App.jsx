@@ -7,12 +7,6 @@ export const App = () => {
     <div className="App">
       <Header />
       <Day />
-      <Day />
-      <Day />
-      <Day />
-      <Day />
-      <Day />
-      <Day />
     </div>
   )
 }
