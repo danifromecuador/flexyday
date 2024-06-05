@@ -10,7 +10,6 @@ export const Header = () => {
   const handleEnter = (e) => {
     if (e.key === "Enter" && !input) setPlaceHolder("Type something")
     if (e.key === "Enter" && input) {
-      console.log(input);
       store.addBlock(input)
       setInput("")
       setPlaceHolder("Type a new block and press Enter")
@@ -26,9 +25,10 @@ export const Header = () => {
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={(e) => handleEnter(e)}
       />
+      <button onClick={() => store.deleteAllBlocks()}>Delete All Blocks</button>
       <div className="blocks">
-        {store.blocks.map(block => (
-          <div className='block'></div>
+        {store.blocks.map((block, index) => (
+          <div className='block' key={index}>{index}</div>
         ))}
       </div>
     </div>
