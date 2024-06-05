@@ -3,20 +3,26 @@ import './Header.css'
 
 export const Header = () => {
   const [blockName, setBlockName] = useState("")
-  const [blockDurationClass, setBlockDurationClass] = useState("a")
   const [blocks, setBlocks] = useState(JSON.parse(localStorage.getItem("blocks")) || [])
   const alphabet = [..."abcdefghijklmnopqrstuvwxyz"]
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      setBlocks([...blocks, { name: blockName, duration: 1, durationClass:alphabet[0] }])
+      setBlocks([...blocks, { name: blockName, duration: 1, durationClass: alphabet[0] }])
       setBlockName("")
     }
   }
 
   const increaseBlockDuration = (i) => {
     const newBlocks = [...blocks]
-    newBlocks[i] = { ...newBlocks[i], duration: newBlocks[i].duration + 1, durationClass: alphabet[newBlocks[i].duration] }
+    newBlocks[i] = { ...newBlocks[i], duration: newBlocks[i].duration + 1, durationClass: alphabet[newBlocks[i].duration+1] }
+    setBlocks(newBlocks)
+  }
+
+  const decreaseBlockDuration = (e, i) => {
+    e.preventDefault()
+    const newBlocks = [...blocks]
+    newBlocks[i] = { ...newBlocks[i], duration: newBlocks[i].duration - 1, durationClass: alphabet[newBlocks[i].duration-1] }
     setBlocks(newBlocks)
   }
 
@@ -42,6 +48,7 @@ export const Header = () => {
           <div
             className={`block ${block.durationClass}`}
             onClick={() => increaseBlockDuration(index)}
+            onContextMenu={(event) => decreaseBlockDuration(event, index)}
           >
             {block.name}
             {block.duration}
