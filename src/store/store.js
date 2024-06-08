@@ -68,7 +68,6 @@ export const Store = create(devtools((set) => ({
     };
 
     // Return the new state
-    console.log(daysCopy);
     return {
       days: daysCopy
     };
