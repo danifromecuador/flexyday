@@ -1,10 +1,8 @@
-import { useEffect } from 'react'
 import { Store } from '../store/store'
 import './Day.css'
 
 export const Day = () => {
   const store = Store()
-  useEffect(() => store.createDays(), [store.blocks])
 
   return (
     <div className='Header Day'>
