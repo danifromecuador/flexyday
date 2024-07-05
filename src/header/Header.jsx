@@ -35,7 +35,7 @@ export const Header = () => {
         onKeyDown={(e) => addBlock(e)}
       />
       <button onClick={() => store.deleteAllBlocks()}>Delete All Blocks</button>
-      <div className="blocks">
+      <div className="blocks just-header">
         {store.blocks.map((block, indexBlock) => (
           <div className='block-and-name' key={indexBlock}>
             <div className="name">{block.name}</div>
